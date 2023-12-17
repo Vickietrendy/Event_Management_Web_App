@@ -1,0 +1,8 @@
+<h2 class="page-header">Edit Alumni</h2>
+<form action="/alumni/<%=alumni.id%>?_method=PUT" method="POST">
+<%- include('_form_fields')%><br>
+<div class="form-row form-row-end btn-row">
+<a class="btn btn-primary" href="/alumni/<%=alumni.id%>">Cancel</a>
+<button class="btn btn-primary" type="submit">Update</button>
+</div>
+</form>

@@ -1,0 +1,35 @@
+<h2 class="page-header">Search Events</h2>
+<form action="/events" method="GET">
+    <div class="form-row">
+    <div class="form-item">
+    <label>Name</label>
+    <input type="text" name="eventName" value="<%= searchOptions.eventName%>">
+    </div></div>
+    <div class="form-row">
+        <div class="form-item">
+        <label>Event Date After</label>
+        <input type="date" name="eventDateAfter" value="<%= searchOptions.eventDateAfter%>">
+        </div>
+        <div class="form-item">
+            <label>Event Date Before</label>
+            <input type="date" name="eventDateBefore" value="<%= searchOptions.eventDateBefore%>">
+            </div>
+        </div>
+        <div class="form-row form-row-end">
+    <button class="btn btn-primary" type="submit">Search</button></div>
+</form>
+<br>
+<% events.forEach(event => { %>
+  <div class="event-row">
+    <div class="event-name"><%= event.eventName%></div>
+    <div class="btn-row">
+      <a class="btn btn-primary" href="/events/<%=event.id %>">View</a>
+      <a class="btn btn-primary" href="/events/<%=event.id %>/edit">Edit</a>
+
+      <form action="/events/<%=event.id%>?_method=DELETE" method="POST">
+        <button class="btn btn-primary" type="submit">Delete</button>
+      </form>
+      
+    </div>
+  </div>
+<% }); %>

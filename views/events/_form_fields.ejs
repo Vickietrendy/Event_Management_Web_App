@@ -1,0 +1,49 @@
+<div class="form-row">
+    <div class="form-item">
+        <label>Event Name</label>
+        <input type="text" name="name" value="<%= event.eventName %>"><br>
+    </div>
+    <div class="form-item">
+        <label>Alumni</label>
+        <select name="alumni">
+            <% alumni.forEach(alumni => { %>
+                <% if (alumni.id === event.alumni) { %>
+                    <option selected label="<%= alumni.name %>" value="<%= alumni.id %>">
+                <% } else { %>
+                    <option label="<%= alumni.name %>" value="<%= alumni.id %>">
+                <% } %>
+            <% }) %>
+        </select>
+    </div>
+</div>
+<div class="form-row">
+    <div class="form-item">
+        <label>Event Date</label>
+        <input type="date" name="eventDate"
+               value="<%= event.eventDate == null ? '' : event.eventDate.toISOString().split('T')[0] %>">
+    </div>
+    <div class="form-item">
+        <label>Entry Fee</label>
+        <input type="number" name="entryFee" min="1" value="<%= event.entryFee %>">
+    </div>
+</div>
+<div class="form-row">
+    <div class="form-item form-item-no-grow">
+        <label>Cover</label>
+        <input type="file" name="cover">
+    </div>
+    <div class="form-item">
+        <label>Description</label>
+        <textarea name="description" value="<%= event.description %>"></textarea>
+    </div>
+</div>
+<div class="form-row">
+    <div class="form-item">
+        <label>Event Type</label>
+        <select name="eventType">
+            <option value="networking">Networking</option>
+            <option value="campusEvents">Campus Events</option>
+            <option value="professionalDevelopment">Professional Development</option>
+        </select>
+    </div>
+</div>

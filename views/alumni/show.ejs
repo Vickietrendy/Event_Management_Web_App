@@ -1,0 +1,8 @@
+<h2 class="page-header"><%=alumni.name%></h2>
+<div class="item row">
+<a href="/alumni/<%=alumni.id%>/edit" class="btn btn-primary">Edit</a>
+</div>
+<%if(eventsByAlumni.length>0){%>
+    <h2  class="page-header">Events By Alumni</h2>
+    <%-include('../partials/eventGrid',{events: eventsByAlumni})%>
+<%}%>

@@ -1,0 +1,19 @@
+<h2 class="page-header"><%=event.eventName%></h2>
+<div class="event-details">
+<div>
+    <img src="<%=event.coverImagePath%>" height="220" width="160"><br><br>
+        <a class="btn btn-primary" href='/alumni/<%=event.alumni.id%>'>View Alumni</a>
+</div>
+<div class="event-details-grid">
+    <div class="event-details-label">Alumni:</div>
+    <div><%=event.alumni.name%></div>
+    <div class="event-details-label">Event Date:</div>
+    <div><%=event.eventDate.toDateString()%></div>
+    <div class="event-details-label">Entry Fee:</div>
+    <div><%=event.entryFee%></div>
+    <div class="event-details-label">Description:</div>
+    <div><%=event.description%></div>
+    <div class="event-details-label">Event Type:</div>
+    <div><%=event.eventType%></div>
+</div>
+</div>

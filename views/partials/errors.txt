@@ -1,0 +1,1 @@
+error when creating a new organiser without passing name and city

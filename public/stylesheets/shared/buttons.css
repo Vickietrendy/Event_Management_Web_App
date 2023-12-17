@@ -1,0 +1,31 @@
+:root{
+    --color-btn-primary-text:hsl(var(--color-base-hue),100%,20%);
+    --color-btn-primary-background:hsl(var(--color-base-hue),100%,83%);
+    --color-btn-border:black;
+}
+.btn{
+    border:1px solid var(--color-btn-border);
+    border-radius:.5rem;
+    padding: .5rem 1rem;
+    font-size: 1rem;
+    font-family: 'aerial';
+    cursor: pointer;
+    text-align: center;
+    text-decoration: none;
+}
+.btn-row{
+    display: flex;
+    align-items: flex-start;
+}
+.btn-row > * {
+    margin-left: 1rem;
+}
+.btn-row > *:first-child{
+    margin-left: 0;
+}
+
+.btn-primary{
+    color:var(--color-btn-primary-text);
+    background-color: var(--color-btn-primary-background);
+
+}

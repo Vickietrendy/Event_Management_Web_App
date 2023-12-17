@@ -1,0 +1,23 @@
+<h2 class="page-header">Search Alumni</h2>
+<form action="/alumni" method="GET">
+    <div class="form-row">
+    <div class="form-item">
+    <label >Name</label>
+    <input type="text" name="name" value="<%= searchOptions.name%>"></div></div>
+    <div class="form-row form-row-end">
+    <button type="submit" class="btn btn-primary">Search</button></form></div>
+
+</form><br>
+<% alumni.forEach(alumni=>{%>
+    <div class="alumni-row">
+    <div class="alumni-name"><%= alumni.name%>
+    </div>
+    <div class="btn-row">
+    <a class="btn btn-primary" href="/alumni/<%=alumni.id%>">View</a>
+    <a class="btn btn-primary" href="/alumni/<%=alumni.id%>/edit">Edit</a>
+    <a class="btn btn-primary" href="/alumni/<%=alumni.id%>/delete">Delete</a>
+
+     </div>
+</div>
+
+    <%})%>
